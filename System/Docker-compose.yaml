@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  auth-v1:
+    container_name: app-master-v.1.1
+    image: app-master-parameter:v.1.1
+    ports:
+      - "80:8080"
+
+  auth-v2:
+    container_name: auth-v.1.1
+    image: auth-non-sso:v.1.1
+    ports:
+      - "81:8080"
+    environment:
+      GlobalPassword: qwerty123
+      ValidIssuer: bni.co.iddd
+      ValidAudience: client
+      AccessTokenExpirationMinutes: "1"
+      RefreshTokenExpirationMinutes: "5"
+      KeyEnryptJwt : MRVK2i0dpT1rw3B4Vop3g8XksKcEX32wL38Ya2BZXVrR2ifvOD
+      SymmetricSecurityKey: "4y7XS2AHicSOs2uUJCxwlHWqTJNExW3UDUjMeXi96uLEso1YV4RazqQubpFBdx0zZGtdxBelKURhh0WXxPR0mEJQHk_0U9HeYtqcMManhoP3X2Ge8jgxh6k4C_Gd4UPTc6lkx0Ca5eRE16ciFQ6wmYDnaXC8NbngGqartHccAxE"

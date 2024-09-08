@@ -1,0 +1,6 @@
+@MasterParameter_HostAddress = http://localhost:5135
+
+GET {{MasterParameter_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
